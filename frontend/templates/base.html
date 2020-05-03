@@ -9,7 +9,7 @@ scratch. This page gets rid of all links and provides the needed markup only.
 <head>
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <title>AdminLTE 2 | Starter</title>
+  <title>ProjectBudget</title>
   <!-- Tell the browser to be responsive to screen width -->
   <meta content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" name="viewport">
   <link rel="stylesheet" href="{% static 'admin-lte/bower_components/bootstrap/dist/css/bootstrap.min.css' %}">
@@ -22,7 +22,7 @@ scratch. This page gets rid of all links and provides the needed markup only.
   <!-- AdminLTE Skins. We have chosen the skin-blue for this starter
         page. However, you can choose any other skin. Make sure you
         apply the skin class to the body tag so the changes take effect. -->
-  <link rel="stylesheet" href="{% static 'admin-lte/dist/css/skins/skin-blue.min.css' %}">
+  <link rel="stylesheet" href="{% static 'admin-lte/dist/css/skins/skin-green.min.css' %}">
 
   <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
   <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
@@ -35,6 +35,10 @@ scratch. This page gets rid of all links and provides the needed markup only.
   <link rel="stylesheet"
         href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,600,700,300italic,400italic,600italic">
 
+  <!-- DataTables -->
+  <link rel="stylesheet" type="text/css" href="{% static 'admin-lte/bower_components/datatables.net-bs/css/dataTables.bootstrap.min.css' %}">
+
+  <!-- ProjectBudget css -->
   <link rel="stylesheet" type="text/css" href="{% static 'css/projectbudget.css' %}">
 
   {% block css_extras %}{% endblock %}
@@ -59,7 +63,7 @@ desired effect
 |               | sidebar-mini                            |
 |---------------------------------------------------------|
 -->
-<body class="{% block body_class %}{% endblock %}">
+<body class="skin-green {% block body_class %}{% endblock %}">
 
 {% block content %}{% endblock %}
 
@@ -71,6 +75,9 @@ desired effect
 <script src="{% static 'admin-lte/bower_components/bootstrap/dist/js/bootstrap.min.js' %}"></script>
 <!-- AdminLTE App -->
 <script src="{% static 'admin-lte/dist/js/adminlte.min.js' %}"></script>
+<!-- DataTables -->
+<script src="{% static 'admin-lte/bower_components/datatables.net/js/jquery.dataTables.min.js' %}"></script>
+<script src="{% static 'admin-lte/bower_components/datatables.net-bs/js/dataTables.bootstrap.min.js' %}"></script>
 
 {% block js_extras %}{% endblock %}
 
