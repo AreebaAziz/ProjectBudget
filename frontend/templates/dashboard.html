@@ -155,6 +155,18 @@
 </div>
 
 <!-- Projections --> 
+<div class="row">
+	<div class="col-md-12">
+		<div class="box box-solid box-success">
+			<div class="box-header">
+				<h3 class="box-title">Future Projections</h3>
+			</div>
+			<div class="box-body">
+				<canvas id="projectionsCanvas"></canvas>
+			</div>
+		</div>
+	</div>
+</div>
 
 {% endblock %}
 
@@ -175,5 +187,67 @@
 	    	'info': false
 	    });
 	} );
+</script>
+<script src="{% static 'chart.js/dist/Chart.bundle.min.js' %}"></script>
+<script type="text/javascript">
+	var transferData = [
+		12, 0, 0, 5, 2, 3,
+		0, -5, 0, 4, 2, -3,
+		11, 8, 3, -9, -7, 0,
+		14, 0, 0, -4, 3, 1,
+	]
+	const colours = transferData.map((value) => value < 0 ? '#dd4b39' : '#00a65a');
+	var ctx = document.getElementById('projectionsCanvas');
+	var myChart = new Chart(ctx, {
+	    type: 'bar',
+	    data: {
+	        labels: [
+	        	'20/05/03', '20/05/04', '20/05/05', '20/05/06', '20/05/07', '20/05/08',
+	        	'20/05/09', '20/05/10', '20/05/11', '20/05/12', '20/05/13', '20/05/14',
+	        	'20/05/15', '20/05/16', '20/05/17', '20/05/18', '20/05/19', '20/05/20',
+	        	'20/05/21', '20/05/22', '20/05/23', '20/05/24', '20/05/25', '20/05/26'
+	        ],
+	        datasets: [{
+	            label: 'Transfers',
+	            data: transferData,
+	            borderWidth: 1,
+	            backgroundColor: colours,
+	        }, {
+	        	label: 'Net Total',
+	        	data: [
+	            	12, 12, 12, 17, 19, 22,
+	            	22, 17, 17, 21, 23, 20,
+	            	31, 39, 42, 33, 26, 26,
+	            	40, 40, 40, 36, 39, 40,	
+	        	],
+	        	type: 'line',
+	        	backgroundColor: "#3c8dbc",
+	        }]
+	    },
+	    options: {
+	        scales: {
+	            yAxes: [{
+	                ticks: {
+	                    beginAtZero: true
+	                },
+	                scaleLabel: {
+	                	display: true,
+	                	labelString: 'Amount ($)',
+	            	}
+	            }],
+	            xAxes: [{
+	            	scaleLabel: {
+	            	display: true,
+	            	labelString: 'Date',
+	            	}
+	            }
+	            ]
+	        },
+	        legend: {
+	        	display: true,
+
+	        }
+	    }
+	});
 </script>
 {% endblock %}

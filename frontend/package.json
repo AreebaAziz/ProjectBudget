@@ -4,7 +4,8 @@
   "description": "Frontend of django template project.",
   "main": "index.js",
   "dependencies": {
-    "admin-lte": "^2.4.18"
+    "admin-lte": "^2.4.18",
+    "chart.js": "^2.9.3"
   },
   "devDependencies": {},
   "scripts": {
