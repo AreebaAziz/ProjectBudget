@@ -125,7 +125,7 @@ STATIC_URL = '/static/'
 
 STATICFILES_DIRS = [
     os.path.join(BASE_DIR, "frontend", "node_modules"),
-    os.path.join(BASE_DIR, "frontend", "static"),
+    os.path.join(BASE_DIR, "frontend", "projectbudget"),
 ]
 
 AUTH_USER_MODEL = 'MyUser.MyUser'
